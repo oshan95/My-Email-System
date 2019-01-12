@@ -1,0 +1,35 @@
+msss.out: error.o wrapunix.o wrapsock.o wraplib.o wrapstdio.o msss.o readline.o writen.o wrappthread.o serve_client.o signal.o
+	cc -o msss.out wrappthread.o serve_client.o error.o wrapunix.o wrapsock.o wraplib.o wrapstdio.o msss.o readline.o writen.o signal.o -lpthread
+
+error.o: error.c acc.h
+	cc -c error.c
+
+wrapunix.o: wrapunix.c acc.h
+	cc -c wrapunix.c
+
+wrapsock.o: wrapsock.c acc.h
+	cc -c wrapsock.c
+
+wraplib.o: wraplib.c acc.h
+	cc -c wraplib.c
+
+wrapstdio.o: wrapstdio.c acc.h
+	cc -c wrapstdio.c
+
+msss.o: msss.c acc.h
+	cc -c msss.c
+
+serve_client.o: serve_client.c acc.h
+	cc -c serve_client.c
+
+readline.o: readline.c acc.h
+	cc -c readline.c
+
+signal.o: signal.c acc.h
+	cc -c signal.c
+
+writen.o: writen.c acc.h
+	cc -c writen.c
+
+wrappthread.o: wrappthread.c acc.h
+	cc -c wrappthread.c

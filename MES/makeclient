@@ -1,0 +1,31 @@
+mssc.out: error.o wrapunix.o wrapsock.o wraplib.o wrapstdio.o mssc.o readline.o writen.o wrappthread.o client_thread.o
+	cc -o mssc.out wrappthread.o client_thread.o error.o wrapunix.o wrapsock.o wraplib.o wrapstdio.o mssc.o readline.o writen.o -lpthread
+
+error.o: error.c acc.h
+	cc -c error.c
+
+wrapunix.o: wrapunix.c acc.h
+	cc -c wrapunix.c
+
+wrapsock.o: wrapsock.c acc.h
+	cc -c wrapsock.c
+
+wraplib.o: wraplib.c acc.h
+	cc -c wraplib.c
+
+wrapstdio.o: wrapstdio.c acc.h
+	cc -c wrapstdio.c
+
+mssc.o: mssc.c acc.h
+	cc -c mssc.c
+
+client_thread.o: client_thread.c acc.h
+	cc -c client_thread.c
+
+readline.o: readline.c acc.h
+	cc -c readline.c
+
+writen.o: writen.c acc.h
+	cc -c writen.c
+wrappthread.o: wrappthread.c acc.h
+	cc -c wrappthread.c
